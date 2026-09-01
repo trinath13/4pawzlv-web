@@ -53,26 +53,6 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-1">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === '/'}
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    isActive
-                      ? 'text-primary-700 bg-primary-100'
-                      : 'text-gray-600 hover:text-primary-700 hover:bg-primary-50'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </nav>
-
           {/* Right actions */}
           <div className="flex items-center gap-1 sm:gap-2">
             <button className="hidden sm:flex w-10 h-10 items-center justify-center rounded-lg text-gray-500 hover:text-primary-700 hover:bg-primary-50 transition-colors">
@@ -101,7 +81,6 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* Mobile menu button */}
             <button
               onClick={() => setMobileOpen((v) => !v)}
               className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-700 hover:bg-primary-50 transition-colors"
